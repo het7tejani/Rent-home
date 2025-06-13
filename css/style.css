@@ -16,6 +16,7 @@
     --muted-text-color: #797864; /* Desaturated/Lighter Muted Olive */
     --input-border-color: #cccccc; /* Light gray for input bottom border */
     --shadow-color: rgba(84, 83, 51, 0.08); /* Subtler shadow (updated) */
+    --white-bg-color: #FFFFFF; /* White background for cards */
     
     --success-bg-color: #E9E8E2; 
     --success-text-color: #6C6B5B; 
@@ -138,7 +139,7 @@ nav ul li a::after {
     transition: width 0.3s ease-in-out;
 }
 header.scrolled nav ul li a::after {
-    background-color: var(--accent-color); 
+    background-color: var(--secondary-color); 
 }
 
 
@@ -148,7 +149,7 @@ nav ul li a.active {
 }
 header.scrolled nav ul li a:hover,
 header.scrolled nav ul li a.active {
-    color: var(--accent-color); 
+    color: var(--secondary-color); 
 }
 
 
@@ -170,6 +171,10 @@ main {
 }
 .content-section:first-of-type { 
     padding-top: 110px; 
+}
+
+.m-auto {
+    margin: 0 auto;
 }
 
 /* Buttons */
@@ -247,6 +252,15 @@ main {
 .button-wrapper.button-color-green .long-arrow-btn svg line,
 .button-wrapper.button-color-green .long-arrow-btn svg path {
     stroke: var(--dark-green);
+}
+
+.button-wrapper.button-color-white .btn_name {
+    color: var(--white-bg-color);
+}
+
+.button-wrapper.button-color-white .long-arrow-btn svg line,
+.button-wrapper.button-color-white .long-arrow-btn svg path {
+    stroke: var(--white-bg-color);
 }
 
 .button-wrapper.button-color-yellow .btn_name {
@@ -451,7 +465,7 @@ h3 { font-size: 1.5rem; font-weight: 600;}
 
 /*sub pages Hero Section */
 .sub-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('images/submain.jpg') no-repeat top center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('/images/submain.jpg') no-repeat top center/cover;
     color: var(--light-text-color);
     padding: 0; /* Removed vertical padding */
     text-align: center;
