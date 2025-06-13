@@ -451,7 +451,7 @@ h3 { font-size: 1.5rem; font-weight: 600;}
 
 /*sub pages Hero Section */
 .sub-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('/house/images/submain.jpg') no-repeat top center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('images/submain.jpg') no-repeat top center/cover;
     color: var(--light-text-color);
     padding: 0; /* Removed vertical padding */
     text-align: center;

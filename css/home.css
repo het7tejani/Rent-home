@@ -1,6 +1,6 @@
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('/house/images/hero.jpg') no-repeat top center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('images/hero.jpg') no-repeat top center/cover;
     color: var(--light-text-color);
     padding: 0;
     /* Removed vertical padding */
