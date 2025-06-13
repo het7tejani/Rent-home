@@ -1,0 +1,1426 @@
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('/house/images/hero.jpg') no-repeat top center/cover;
+    color: var(--light-text-color);
+    padding: 0;
+    /* Removed vertical padding */
+    text-align: center;
+    min-height: 100vh;
+    /* Make hero section take full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.hero .container {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text-color);
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--light-text-color);
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+    /* Keep state after animation */
+}
+
+.hero .btn-primary {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    animation: pulse 2s infinite 1s;
+}
+
+/* Investment Showcase Section */
+.investment-showcase {
+    background-color: var(--card-bg-color-hover);
+    /* Light minty green */
+    padding: 80px 0;
+    overflow: hidden;
+    border-bottom: 2px dashed var(--shadow-color);
+    /* Contains any potential overflow from tilted images */
+}
+
+.investment-showcase-layout {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.investment-showcase-content {
+    flex: 1 1 45%;
+    padding-right: 2rem;
+    /* Space before images start */
+}
+
+.investment-showcase-content h2 {
+    font-size: 2.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.investment-showcase-content p {
+    font-size: 1.1rem;
+    color: var(--dark-text-color);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.btn-showcase {
+    background-color: #3AAFA9;
+    /* Teal color */
+    color: var(--light-text-color);
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.btn-showcase:hover {
+    background-color: #2c8f8a;
+    /* Darker teal */
+    transform: translateY(-2px);
+}
+
+.investment-showcase-images {
+    flex: 1 1 55%;
+    position: relative;
+    min-height: 450px;
+    /* Ensure space for positioned images */
+}
+
+.investment-showcase-images .image-wrapper {
+    position: absolute;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 5px solid whitesmoke;
+    overflow: hidden;
+    /* To ensure border-radius clips image */
+    background-color: #fff;
+    /* Fallback if images are transparent or slow loading */
+    /* padding-bottom removed, height will be explicit */
+}
+
+.investment-showcase-images .image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    /* Changed from cover to contain */
+}
+
+/* Positioning and transforms for each image in the collage */
+.investment-showcase-images .img-1 {
+    /* Woman on couch - largest, slightly back */
+    width: 65%;
+    height: 270px;
+    /* Explicit height */
+    top: 5%;
+    left: 0;
+    transform: rotate(-6deg);
+    z-index: 2;
+}
+
+.investment-showcase-images .img-2 {
+    /* Older man - smaller, top right */
+    width: 38%;
+    height: 170px;
+    /* Explicit height */
+    top: 0;
+    right: 5%;
+    transform: rotate(4deg);
+    z-index: 3;
+}
+
+.investment-showcase-images .img-3 {
+    /* Man by fridge - medium, bottom right */
+    width: 45%;
+    height: 215px;
+    /* Explicit height */
+    bottom: 0%;
+    right: 0;
+    transform: rotate(-3deg);
+    z-index: 4;
+}
+
+.investment-showcase-images .img-4 {
+    /* Plant - small, overlapping */
+    width: 30%;
+    height: 180px;
+    /* Explicit height */
+    top: 35%;
+    left: 70%;
+    transform: rotate(8deg);
+    z-index: 5;
+}
+
+.investment-showcase-images .img-5 {
+    /* Glasses - smallest, very front */
+    width: 35%;
+    height: 105px;
+    /* Explicit height */
+    bottom: -5%;
+    /* Slight overlap at bottom */
+    left: 20%;
+    transform: rotate(2deg);
+    z-index: 6;
+}
+
+
+/* Find Your Dream House Section */
+.dream-house-finder-section {
+    background-color: var(--card-bg-color);
+    /* White background */
+    padding: 80px 0;
+}
+
+.dream-house-finder-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.dream-finder-title {
+    font-size: 2.6rem;
+    /* Adjust as needed */
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+    display: inline-block;
+    /* To contain sparkles */
+    position: relative;
+}
+
+.dream-finder-title .sparkle {
+    color: var(--primary-color);
+    /* Or a brighter accent */
+    font-size: 1.5em;
+    /* Make sparkles larger */
+    opacity: 0.8;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dream-finder-title .sparkle.left {
+    margin-right: 0.5em;
+}
+
+.dream-finder-title .sparkle.right {
+    margin-left: 0.5em;
+}
+
+.emphasized-house {
+    font-style: italic;
+    color: var(--primary-color);
+    /* Or a distinct color */
+    font-size: 1.1em;
+    /* Slightly larger */
+}
+
+.dream-house-finder-section .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--muted-text-color);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.house-scroller-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    /* For any potential absolute positioned elements inside like custom nav */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.house-scroller {
+    --original-scroller-width: 2080px;
+    /* Default, will be overridden by JS */
+    display: flex;
+    width: max-content;
+    /* Allows it to be as wide as its content */
+    animation: endlessScroll 60s linear infinite;
+    /* Adjust duration for speed */
+}
+
+@keyframes endlessScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-1 * var(--original-scroller-width)));
+    }
+}
+
+.house-card-minimal {
+    flex-shrink: 0;
+    /* Prevent cards from shrinking */
+    width: 280px;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 20px;
+    /* Gap between cards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--divider-color);
+    /* Placeholder bg */
+}
+
+.house-card-minimal:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.house-card-minimal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.house-card-minimal:hover img {
+    transform: scale(1.1);
+}
+
+.house-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 20px 20px;
+    /* More padding at top for gradient effect */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+    color: var(--light-text-color);
+    transition: opacity 0.3s ease;
+}
+
+.house-card-overlay h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    color: var(--light-text-color);
+    line-height: 1.3;
+}
+
+.house-card-overlay p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+    padding: 0.7rem 1.8rem;
+    /* Adjust padding */
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    transform: translateY(-2px);
+    /* Keep hover effect consistent */
+}
+
+.view-all-dream-btn {
+    margin-top: 2.5rem;
+    display: inline-block;
+    /* Was block, inline-block for centering via text-center */
+}
+
+
+/* AI Features Section (Light Theme) */
+.ai-features-section {
+    background-color: var(--light-bg-color);
+    /* Light background */
+    padding: 80px 0;
+}
+
+.ai-features-section .section-title {
+    color: var(--secondary-color);
+    /* Dark text for title */
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ai-features-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    /* Default for mobile */
+}
+
+.ai-feature-block {
+    background-color: var(--card-bg-color);
+    /* White card background */
+    border: 1px solid var(--divider-color);
+    /* Light border */
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ai-feature-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+    /* Standard light theme shadow */
+}
+
+.feature-block-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    /* Icon color is determined by the image itself */
+}
+
+.feature-block-icon.large-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.ai-feature-block h3 {
+    color: var(--dark-text-color);
+    /* Dark text for headings */
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.ai-feature-block p {
+    color: var(--muted-text-color);
+    /* Muted text for paragraphs */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.feature-graphic-placeholder {
+    width: 100%;
+    max-width: 330px;
+    margin-top: auto;
+}
+
+.feature-graphic-placeholder img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    opacity: 0.9;
+    /* Slightly more opaque for light theme */
+}
+
+
+/* Featured Properties Section on Home Page */
+.featured-properties {
+    background-color: var(--card-bg-color-hover);
+    /* Keep slightly off-white for contrast */
+}
+
+.featured-properties .view-all-btn {
+    margin-top: 2rem;
+}
+
+
+/* Why Choose Us Section */
+.why-choose-us-section {
+    background-color: var(--card-bg-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.feature-item .feature-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    padding: 3px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.feature-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--muted-text-color);
+}
+
+/* Designed for You Section */
+.designed-for-you-section {
+    background-color: var(--card-bg-color-hover);
+    /* Very light gray/off-white */
+    padding: 80px 0;
+}
+
+.designed-layout-container {
+    display: flex;
+    gap: 3rem;
+    /* Space between left and right columns */
+}
+
+.designed-content-left {
+    flex: 1 1 40%;
+    /* Left column takes about 40% */
+    max-width: 450px;
+    /* Max width for the left text content */
+    position: sticky;
+    top: 120px;
+    /* Adjust based on your header height + desired offset */
+    align-self: flex-start;
+    /* Important for sticky positioning */
+    height: fit-content;
+    /* Ensure it doesn't try to be full height of parent */
+}
+
+.designed-title {
+    font-size: 2.8rem;
+    /* Large title */
+    font-weight: 700;
+    color: var(--dark-text-color);
+    /* Use dark text color from theme */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    /* Align title to left */
+}
+
+.designed-description {
+    font-size: 1.1rem;
+    color: var(--muted-text-color);
+    line-height: 1.7;
+    text-align: left;
+    /* Align description to left */
+}
+
+.designed-features-right {
+    flex: 1 1 55%;
+    /* Right column takes remaining space */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    /* Space between feature items */
+}
+
+.feature-detail-item {
+    display: flex;
+    /* align-items: flex-start; */
+    align-items: center;
+    /* Align icon with the top of the text */
+    gap: 1.5rem;
+    /* Space between icon and text block */
+}
+
+.feature-detail-icon {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    /* Slight top margin to align with text baseline better */
+}
+
+.feature-detail-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--secondary-color);
+    /* Or your primary/accent color */
+}
+
+.feature-detail-text {
+    /* Container for title and description */
+}
+
+.feature-detail-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-text-color);
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.feature-detail-description {
+    font-size: 0.95rem;
+    color: var(--muted-text-color);
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--card-bg-color-hover);
+    padding: 80px 0;
+    position: relative;
+    /* Context for absolute positioning */
+    overflow: hidden;
+    /* Prevent visual overflow of absolutely positioned elements */
+}
+
+.testimonials-section .section-title {
+    margin-bottom: 3rem;
+}
+
+.testimonials-layout {
+    position: relative;
+    /* Positioning context for the slider column */
+    display: flex;
+    /* Can still use flex for base alignment if needed, or remove for full grid/absolute */
+    min-height: 500px;
+    /* Ensure section has enough height for the large image */
+    align-items: center;
+}
+
+.testimonial-image-column {
+    flex-basis: 55%;
+    /* Image takes up more space on the left */
+    max-width: 55%;
+    position: relative;
+    /* Or static if slider column is absolute to testimonials-layout */
+    z-index: 1;
+    /* Behind the slider */
+}
+
+.testimonial-main-image {
+    width: 100%;
+    height: 500px;
+    /* Taller image */
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    /* More pronounced shadow for depth */
+}
+
+.testimonial-slider-column {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    /* Position from the right edge of testimonials-layout */
+    width: 60%;
+    /* Slider takes up space, overlaps image */
+    max-width: 750px;
+    /* Max width for the slider area */
+    transform: translateY(-50%);
+    z-index: 2;
+    /* In front of the image */
+}
+
+.testimonial-slider-wrapper {
+    position: relative;
+    padding: 0 30px;
+    /* Space for nav buttons if they are inside this wrapper */
+}
+
+.testimonial-slider {
+    display: flex;
+    overflow-x: auto;
+    /* Allows horizontal scrolling */
+    scroll-snap-type: x mandatory;
+    /* Smooth snapping to cards */
+    gap: 1.5rem;
+    padding: 1rem 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    /* For programmatic scrolling via JS */
+}
+
+.testimonial-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    flex: 0 0 calc(50% - 1rem);
+    /* Try to show two cards or 1.5 cards depending on slider width */
+    max-width: 320px;
+    min-width: 280px;
+    scroll-snap-align: start;
+    /* Each card snaps to the start of the slider view */
+    background-color: rgba(255, 255, 255, 0.95);
+    /* Slightly transparent if overlapping complex image parts */
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    /* Softer shadow */
+    position: relative;
+    border: 1px solid var(--accent-color);
+    backdrop-filter: blur(5px);
+    /* Optional: blur background for readability */
+}
+
+.testimonial-quote-icon {
+    font-size: 3.5rem;
+    /* Slightly smaller */
+    color: var(--accent-color);
+    position: absolute;
+    line-height: 1;
+    opacity: 0.6;
+}
+
+.testimonial-quote-icon.top-left {
+    top: 0.8rem;
+    left: 1.2rem;
+}
+
+.testimonial-quote-icon.bottom-right {
+    bottom: 0.8rem;
+    right: 1.2rem;
+    transform: rotate(180deg);
+}
+
+.testimonial-text {
+    min-height: 140px;
+    font-size: 0.95rem;
+    /* Slightly smaller for card size */
+    color: var(--dark-text-color);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    /* Slightly reduced gap */
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--divider-color);
+}
+
+.author-avatar {
+    width: 45px;
+    /* Slightly smaller avatar */
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+}
+
+.author-title {
+    font-size: 0.8rem;
+    color: var(--muted-text-color);
+}
+
+.author-rating {
+    display: flex;
+    gap: 0.15rem;
+    margin-top: 0.25rem;
+}
+
+.star-icon {
+    width: 14px;
+    /* Smaller stars */
+    height: 14px;
+    fill: #FFD700;
+}
+
+.star-icon.star-empty {
+    fill: var(--accent-color);
+}
+
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    width: 44px;
+    /* Slightly larger for easier click */
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    /* Larger icon */
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    z-index: 15;
+    /* Ensure buttons are above cards */
+}
+
+.slider-nav:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-nav:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: translateY(-50%) scale(1);
+    /* No scale on disabled */
+}
+
+.prev-slide {
+    left: 0px;
+    /* Position relative to slider-wrapper */
+}
+
+.next-slide {
+    right: 0px;
+    /* Position relative to slider-wrapper */
+}
+
+
+/* Dream Home Journey Section (Light Theme) */
+.dream-journey-section {
+    background-color: var(--card-bg-color-hover);
+    /* Light theme background */
+    padding: 80px 0;
+    /* color: var(--dark-text-color); Default text color from body */
+}
+
+.dream-journey-section .section-title {
+    color: var(--secondary-color);
+    /* Light theme title color */
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.dream-journey-section .section-subtitle {
+    color: var(--muted-text-color);
+    /* Light theme subtitle color */
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.7;
+}
+
+.dream-journey-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.journey-card {
+    background-color: var(--card-bg-color);
+    /* Light theme card background */
+    border: 1px solid var(--divider-color);
+    /* Light theme card border */
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journey-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px var(--shadow-color);
+    /* Standard light theme shadow */
+}
+
+.journey-card-icon {
+    margin-bottom: 1rem;
+}
+
+.journey-card-icon svg {
+    width: 36px;
+    height: 36px;
+    stroke: var(--primary-color);
+    /* Light theme icon color */
+}
+
+.journey-card-title {
+    color: var(--secondary-color);
+    /* Light theme card title color */
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.journey-card-description {
+    color: var(--muted-text-color);
+    /* Light theme card description color */
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Our Impact Section */
+.our-impact-section {
+    /* No specific background, uses default page bg */
+}
+
+.impact-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1992&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.impact-banner-title {
+    color: var(--light-text-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.impact-stats-container {
+    background-color: var(--accent-color-red);
+    /* Dark Red */
+    color: var(--light-text-color);
+    padding: 4rem 0;
+}
+
+.impact-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.impact-stat-item {
+    /* Each stat item */
+}
+
+.stat-icon {
+    margin-bottom: 1rem;
+}
+
+.stat-icon svg {
+    width: 48px;
+    height: 48px;
+    fill: var(--light-text-color);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    /* Line above number */
+    padding-top: 1rem;
+    display: inline-block;
+    /* To contain border-top properly */
+}
+
+.stat-label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(135, 134, 114, 0.7);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(135, 134, 114, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(135, 134, 114, 0);
+    }
+}
+
+/* Responsive adjustments for AI Features Grid */
+@media (min-width: 769px) {
+
+    /* Tablet and larger */
+    .ai-features-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "col1-top   main-feature col3-top"
+            "col1-bottom main-feature col3-bottom";
+        align-items: stretch;
+    }
+
+    .ai-feature-block {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .ai-feature-block.item-1 {
+        grid-area: col1-top;
+    }
+
+    .ai-feature-block.item-2 {
+        grid-area: col1-bottom;
+    }
+
+    .ai-feature-block.item-3 {
+        grid-area: main-feature;
+        padding: 2.5rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ai-feature-block.item-3 h3 {
+        font-size: 1.7rem;
+    }
+
+    .ai-feature-block.item-3 .feature-graphic-placeholder img {
+        max-width: 320px;
+    }
+
+    .ai-feature-block.item-4 {
+        grid-area: col3-top;
+    }
+
+    .ai-feature-block.item-5 {
+        grid-area: col3-bottom;
+    }
+
+    .dream-journey-grid {
+        /* Can use more columns on larger screens if desired */
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+
+    /* Adjust breakpoint for collage */
+    .investment-showcase-images .img-1 {
+        width: 60%;
+        height: 250px;
+    }
+
+    .investment-showcase-images .img-2 {
+        width: 35%;
+        height: 155px;
+        right: 2%;
+    }
+
+    .investment-showcase-images .img-3 {
+        width: 42%;
+        height: 200px;
+    }
+
+    .investment-showcase-images .img-4 {
+        width: 28%;
+        height: 165px;
+        top: 38%;
+        left: 50%;
+    }
+
+    .investment-showcase-images .img-5 {
+        width: 32%;
+        height: 95px;
+        bottom: -3%;
+        left: 15%;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .investment-showcase-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .investment-showcase-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .investment-showcase-content h2 {
+        text-align: center;
+    }
+
+    .investment-showcase-images {
+        min-height: 380px;
+        /* Adjust height for stacked layout */
+        width: 100%;
+        /* Full width for image area */
+        max-width: 550px;
+        /* Limit max width of collage on tablet */
+        margin: 0 auto;
+    }
+
+    .investment-showcase-images .img-1 {
+        width: 65%;
+        height: 230px;
+        top: 0;
+        left: -5%;
+    }
+
+    .investment-showcase-images .img-2 {
+        width: 40%;
+        height: 160px;
+        top: 2%;
+        right: -3%;
+    }
+
+    .investment-showcase-images .img-3 {
+        width: 50%;
+        height: 190px;
+        bottom: 0;
+        right: -5%;
+    }
+
+    .investment-showcase-images .img-4 {
+        width: 30%;
+        height: 150px;
+        top: 40%;
+        left: 55%;
+    }
+
+    .investment-showcase-images .img-5 {
+        width: 38%;
+        height: 90px;
+        bottom: -2%;
+        left: 10%;
+    }
+
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-layout {
+        /* On smaller screens, stack them or adjust overlap */
+        flex-direction: column;
+        min-height: auto;
+        /* Adjust min height */
+    }
+
+    .testimonial-image-column {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-bottom: -100px;
+        /* Pull slider column up to overlap, adjust as needed */
+        max-height: 400px;
+        /* Control image height */
+        align-self: center;
+    }
+
+    .testimonial-main-image {
+        height: 400px;
+        /* Adjust height for tablet */
+    }
+
+    .testimonial-slider-column {
+        position: relative;
+        /* Back to relative flow */
+        width: 100%;
+        top: auto;
+        right: auto;
+        transform: none;
+        padding: 0 1rem;
+        /* Add padding if full width */
+        margin-top: 0;
+        /* Remove negative margin if image column has one */
+    }
+
+    .testimonial-card {
+        flex-basis: calc(60% - 1.5rem);
+    }
+
+    .designed-layout-container {
+        flex-direction: column;
+    }
+
+    .designed-content-left {
+        position: static;
+        /* Remove sticky for stacked layout */
+        max-width: 100%;
+        text-align: center;
+        /* Center text on mobile */
+        margin-bottom: 2rem;
+    }
+
+    .designed-title,
+    .designed-description {
+        text-align: center;
+    }
+
+    .designed-features-right {
+        align-items: center;
+        /* Center feature items on mobile */
+    }
+
+    .feature-detail-item {
+        max-width: 450px;
+        /* Limit width of items */
+        text-align: center;
+        /* Center text within item */
+        flex-direction: column;
+        /* Stack icon and text on mobile */
+        align-items: center;
+    }
+
+    .feature-detail-text,
+    .feature-detail-title,
+    .feature-detail-description {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    /* Mobile */
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .investment-showcase-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .investment-showcase-content p {
+        font-size: 1rem;
+    }
+
+    .investment-showcase-images {
+        min-height: 320px;
+    }
+
+    .investment-showcase-images .img-1 {
+        width: 70%;
+        height: 200px;
+        top: 0;
+        left: -8%;
+        transform: rotate(-8deg);
+    }
+
+    .investment-showcase-images .img-2 {
+        width: 45%;
+        height: 130px;
+        top: 2%;
+        right: -5%;
+        transform: rotate(6deg);
+    }
+
+    .investment-showcase-images .img-3 {
+        width: 55%;
+        height: 160px;
+        bottom: 0;
+        right: -8%;
+        transform: rotate(-5deg);
+    }
+
+    .investment-showcase-images .img-4 {
+        display: none;
+        /* Hide one complex item on smallest screens */
+    }
+
+    .investment-showcase-images .img-5 {
+        width: 45%;
+        height: 80px;
+        bottom: -2%;
+        left: 5%;
+        transform: rotate(3deg);
+    }
+
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dream-finder-title {
+        font-size: 2rem;
+    }
+
+    .dream-house-finder-section .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .house-card-minimal {
+        width: 240px;
+        /* Slightly smaller cards for mobile */
+        height: 360px;
+        margin-right: 15px;
+    }
+
+    .house-scroller-wrapper {
+        /* Reduce fading edge on mobile if space is tight */
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+    }
+
+
+    .dream-journey-section .section-title,
+    .testimonials-section .section-title,
+    .designed-for-you-section .designed-title {
+        /* Added designed title for mobile */
+        font-size: 2rem;
+    }
+
+    .journey-card-title {
+        font-size: 1.3rem;
+    }
+
+
+    .dream-journey-section .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .journey-card-description {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-image-column {
+        margin-bottom: -80px;
+        /* Adjust overlap for mobile */
+        max-height: 300px;
+    }
+
+    .testimonial-main-image {
+        height: 300px;
+        /* Adjust height for mobile */
+    }
+
+    .testimonial-slider-column {
+        width: 100%;
+        padding: 0 0.5rem;
+        /* Less padding on small screens */
+    }
+
+    .testimonial-card {
+        flex-basis: calc(85% - 1rem);
+        /* One card mostly visible */
+        padding: 1.5rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.9rem;
+    }
+
+    .slider-nav.prev-slide {
+        left: 5px;
+        /* Adjust button position closer to edges */
+    }
+
+    .slider-nav.next-slide {
+        right: 5px;
+        /* Adjust button position closer to edges */
+    }
+
+    .testimonial-slider-wrapper {
+        padding: 0 25px;
+        /* Ensure buttons don't overlap cards too much */
+    }
+
+    .impact-banner-title {
+        font-size: 1.8rem;
+    }
+
+    .stat-number {
+        font-size: 2.2rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .designed-title {
+        font-size: 2.2rem;
+    }
+
+    .designed-description {
+        font-size: 1rem;
+    }
+
+    .feature-detail-title {
+        font-size: 1.2rem;
+    }
+
+    .feature-detail-description {
+        font-size: 0.9rem;
+    }
+}

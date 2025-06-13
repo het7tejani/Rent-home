@@ -1,0 +1,977 @@
+:root {
+    --primary-color: #878672; /* Muted Olive/Grayish Green */
+    --primary-color-darker: #6A6956; /* Darkened Muted Olive */
+    --secondary-color: #555439; /* Dark Olive Green */
+    --accent-color: #D9D7B6; /* Light Beige/Khaki */
+    --accent-color-darker: #BEBC9F; /* Darkened Light Beige */
+    --light-bg-color: #FDFCF7; /* Very Light Warm Off-White (updated) */
+    --card-bg-color: #FFFFFF; /* White for cards */
+    --card-bg-color-hover: #FAF9ED; /* Very light cream from new light bg */
+    --dark-text-color: #4A4A4A; /* Dark Gray/Brown for text (updated for general text) */
+    --card-title-color: #333333; /* Slightly darker for card titles */
+    --card-price-color: #4A4A4A; /* Same as dark-text for price */
+    --card-secondary-info-color: #757575; /* Lighter gray for secondary info */
+    --divider-color: #EAEAEA; /* Light gray for divider (updated) */
+    --light-text-color: #FFFFFF; /* White for text on dark bg */
+    --muted-text-color: #797864; /* Desaturated/Lighter Muted Olive */
+    --input-border-color: #cccccc; /* Light gray for input bottom border */
+    --shadow-color: rgba(84, 83, 51, 0.08); /* Subtler shadow (updated) */
+    
+    --success-bg-color: #E9E8E2; 
+    --success-text-color: #6C6B5B; 
+    --success-border-color: #D1D0C7;
+    --error-bg-color: #FCE8E6; 
+    --error-text-color: #EA4335; 
+    --error-border-color: #FAD2CF; 
+
+    --border-radius: 8px; 
+    --card-border-radius: 4px; /* Subtle radius for new cards */
+    --font-family: 'Poppins', sans-serif;
+
+    /* Dark Theme Variables (can be used for other sections if needed) */
+    --dark-section-bg: #0D0D0D;
+    --dark-card-bg: #1A1A1A;
+    --dark-card-border: #2C2C2C;
+    --dark-text-primary: #FFFFFF;
+    --dark-text-secondary: #B0B0B0;
+    --accent-glow-purple: #A779E9;
+    --accent-glow-pink: #E979A7;
+    --accent-glow-blue: #79A2E9;
+    --accent-color-red: #8B0000; /* DarkRed for Our Impact section */
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg-color);
+    color: var(--dark-text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: transparent; /* Transparent by default */
+    color: var(--light-text-color);
+    padding: 1rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease; /* Smooth transition */
+}
+
+header.scrolled {
+    background-color: var(--accent-color); 
+    position: fixed;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light-text-color); 
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+header.scrolled .logo {
+     color: var(--light-text-color);
+}
+.logo:hover {
+    color: var(--accent-color); /* Light accent for hover on transparent bg */
+}
+header.scrolled .logo:hover {
+    color: var(--accent-color); 
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--light-text-color); 
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0.5rem 0.8rem;
+    transition: color 0.3s ease;
+    position: relative; 
+    display: inline-block; 
+}
+header.scrolled nav ul li a {
+    color: var(--light-text-color);
+}
+
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color); /* Use accent for underline on transparent and scrolled */
+    bottom: 0.2rem; 
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+header.scrolled nav ul li a::after {
+    background-color: var(--accent-color); 
+}
+
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--accent-color); /* Text color changes to accent for hover/active */
+}
+header.scrolled nav ul li a:hover,
+header.scrolled nav ul li a.active {
+    color: var(--accent-color); 
+}
+
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%; /* Underline expands */
+}
+
+nav ul li a.active {
+    font-weight: 600; 
+}
+
+main {
+    flex-grow: 1;
+}
+
+.content-section {
+    padding: 60px 0;
+}
+.content-section:first-of-type { 
+    padding-top: 110px; 
+}
+
+/* Buttons */
+.button-wrapper {
+    display: inline-block;
+    width: fit-content;
+    color: chocolate;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.btn_name {
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.long-arrow-btn {
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.long-arrow-btn:hover {
+    transform: translateX(-20px);
+}
+
+.long-arrow-btn svg {
+    transition: stroke 0.3s ease;
+}
+
+.long-arrow-btn svg line,
+.long-arrow-btn svg path {
+    transition: stroke 0.3s ease;
+}
+
+.button-wrapper.button-color-red .btn_name {
+    color: var(--benefit-icon-color);
+}
+
+.button-wrapper.button-color-red .long-arrow-btn svg line,
+.button-wrapper.button-color-red .long-arrow-btn svg path {
+    stroke: var(--benefit-icon-color);
+}
+
+.button-wrapper.button-color-light .btn_name {
+    color: var(--light-bg);
+}
+
+.button-wrapper.button-color-light .long-arrow-btn svg line,
+.button-wrapper.button-color-light .long-arrow-btn svg path {
+    stroke: var(--light-bg);
+}
+
+.button-wrapper.button-color-dark .btn_name {
+    color: var(--dark-text);
+}
+
+.button-wrapper.button-color-dark .long-arrow-btn svg line,
+.button-wrapper.button-color-dark .long-arrow-btn svg path {
+    stroke: var(--dark-text);
+}
+
+.button-wrapper.button-color-green .btn_name {
+    color: var(--dark-green);
+}
+
+.button-wrapper.button-color-green .long-arrow-btn svg line,
+.button-wrapper.button-color-green .long-arrow-btn svg path {
+    stroke: var(--dark-green);
+}
+
+.button-wrapper.button-color-yellow .btn_name {
+    color: var(--accent-color);
+}
+
+.button-wrapper.button-color-yellow .long-arrow-btn svg line,
+.button-wrapper.button-color-yellow .long-arrow-btn svg path {
+    stroke: var(--accent-color);
+}
+
+.button-wrapper.button-color-accent .btn_name {
+    color: var(--accent-color);
+}
+
+.button-wrapper.button-color-accent .long-arrow-btn svg line,
+.button-wrapper.button-color-accent .long-arrow-btn svg path {
+    stroke: var(--accent-color);
+}
+
+.button-wrapper.button-color-accent:hover .btn_name,
+.button-wrapper.button-color-accent:hover .long-arrow-btn svg line,
+.button-wrapper.button-color-accent:hover .long-arrow-btn svg path {
+    color: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+.button-wrapper .btn_name {
+    font-size: 20px;
+}
+
+.button-wrapper .long-arrow-btn {
+    gap: 8px;
+}
+
+.button-wrapper .long-arrow-btn svg {
+    width: 80px;
+    height: 20px;
+}
+
+.button-wrapper .long-arrow-btn svg line,
+.button-wrapper .long-arrow-btn svg path {
+    stroke-width: 2;
+}
+
+.button-wrapper.button-size-medium .btn_name {
+    font-size: 20px;
+}
+
+.button-wrapper.button-size-medium .long-arrow-btn {
+    gap: 8px;
+}
+
+.button-wrapper.button-size-medium .long-arrow-btn svg {
+    width: 80px;
+    height: 20px;
+}
+
+.button-wrapper.button-size-medium .long-arrow-btn svg line,
+.button-wrapper.button-size-medium .long-arrow-btn svg path {
+    stroke-width: 2;
+}
+
+.button-wrapper.button-size-medium .long-arrow-btn:hover {
+    transform: translateX(-25px);
+}
+
+.button-wrapper.button-size-xsmall .btn_name {
+    font-size: 12px;
+}
+
+.button-wrapper.button-size-xsmall .long-arrow-btn {
+    gap: 4px;
+}
+
+.button-wrapper.button-size-xsmall .long-arrow-btn svg {
+    width: 50px;
+    height: 12px;
+}
+
+.button-wrapper.button-size-xsmall .long-arrow-btn svg line,
+.button-wrapper.button-size-xsmall .long-arrow-btn svg path {
+    stroke-width: 1;
+}
+
+.button-wrapper.button-size-xsmall .long-arrow-btn:hover {
+    transform: translateX(-10px);
+}
+
+.button-wrapper.button-size-small .btn_name {
+    font-size: 16px;
+}
+
+.button-wrapper.button-size-small .long-arrow-btn {
+    gap: 6px;
+}
+
+.button-wrapper.button-size-small .long-arrow-btn svg {
+    width: 65px;
+    height: 16px;
+}
+
+.button-wrapper.button-size-small .long-arrow-btn svg line,
+.button-wrapper.button-size-small .long-arrow-btn svg path {
+    stroke-width: 1.5;
+}
+
+.button-wrapper.button-size-small .long-arrow-btn:hover {
+    transform: translateX(-15px);
+}
+
+.button-wrapper.button-size-large .btn_name {
+    font-size: 24px;
+}
+
+.button-wrapper.button-size-large .long-arrow-btn {
+    gap: 10px;
+}
+
+.button-wrapper.button-size-large .long-arrow-btn svg {
+    width: 95px;
+    height: 24px;
+}
+
+.button-wrapper.button-size-large .long-arrow-btn svg line,
+.button-wrapper.button-size-large .long-arrow-btn svg path {
+    stroke-width: 2.5;
+}
+
+.button-wrapper.button-size-large .long-arrow-btn:hover {
+    transform: translateX(-25px);
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-family: var(--font-secondary);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    /* Updated for consistent border behavior */
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.2;
+    /* Ensure text is centered vertically */
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--dark-text);
+    border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+    background-color: #FFC107;
+    border-color: #FFC107;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--light-bg);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #D32F2F;
+    color: white;
+    border-color: #D32F2F;
+}
+
+.btn-danger:hover {
+    background-color: #C62828;
+    border-color: #C62828;
+    transform: translateY(-2px);
+}
+
+/* ------------------ */
+
+.text-center {
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+h1 { font-size: 2.8rem; font-weight: 700;}
+h2 { font-size: 2.2rem; font-weight: 600; text-align: center; margin-bottom: 2rem;}
+h3 { font-size: 1.5rem; font-weight: 600;}
+
+/*sub pages Hero Section */
+.sub-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url('/house/images/submain.jpg') no-repeat top center/cover;
+    color: var(--light-text-color);
+    padding: 0; /* Removed vertical padding */
+    text-align: center;
+    min-height: 90vh; /* Make hero section take full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; 
+}
+
+.sub-hero .container {
+    max-width: 800px;
+}
+
+.sub-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--light-text-color);
+    animation: fadeInDown 1s ease-out;
+}
+
+.sub-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--light-text-color);
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both; /* Keep state after animation */
+}
+
+.sub-hero .btn-primary {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    animation: pulse 2s infinite 1s;
+}
+
+/* Property Card global styles - NEW DESIGN */
+.property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.property-card {
+    background-color: var(--card-bg-color);
+    border-radius: var(--card-border-radius); 
+    box-shadow: 0 2px 8px var(--shadow-color); /* Subtle shadow */
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px var(--shadow-color); /* Slightly more prominent shadow on hover */
+}
+
+.property-card-image-link {
+    display: block;
+    text-decoration: none;
+}
+
+.property-card-image {
+    width: 100%;
+    height: 350px; /* Consistent height for images */
+    object-fit: cover;
+    display: block;
+    background-color: #f0f0f0; /* Placeholder bg for images */
+}
+
+.property-card-divider {
+    border: 0;
+    border-top: 1px solid var(--divider-color);
+    margin: 0; /* No margin as padding will be in details section */
+}
+
+.property-card-details {
+    padding: 1rem 1.25rem; /* Adjusted padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    /* flex-grow: 1; Removed to allow button to be separate */
+}
+
+.property-card-info {
+    flex-grow: 1;
+    padding-right: 1rem; /* Space between info and price */
+}
+
+.property-card-name {
+    font-size: 1.1rem; /* Slightly smaller */
+    font-weight: 600;
+    color: var(--card-title-color);
+    margin: 0 0 0.25rem 0; /* Reduced bottom margin */
+    line-height: 1.3;
+}
+.property-card-name-link {
+    text-decoration: none;
+    color: inherit;
+}
+.property-card-name-link:hover {
+    color: var(--primary-color);
+}
+
+
+.property-card-secondary-info {
+    font-size: 0.8rem;
+    color: var(--card-secondary-info-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.property-card-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--card-price-color);
+    white-space: nowrap; /* Prevent price from wrapping */
+    line-height: 1.3; /* Align with name line-height */
+    margin-top: 0; /* Align with name if secondary info is short */
+}
+
+.property-card-action {
+    padding: 0.5rem 1.25rem 1.25rem; /* Top, Horizontal, Bottom padding */
+    margin-top: auto; /* Pushes button to bottom if content above is short */
+}
+
+.property-card-button {
+    display: block;
+    width: auto;
+    text-align: center;
+    /* Uses .btn and .btn-secondary for base styling */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0.3rem 0.5rem;
+    }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .property-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+/* Form styling NEW */
+.form-group {
+    margin-bottom: 2rem; /* Increased margin for new style */
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem; /* Reduced margin as it's above */
+    font-weight: 500; /* Slightly less bold */
+    font-size: 0.85rem; /* Smaller label text */
+    color: var(--muted-text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem 0.25rem 0.75rem 0; /* Adjusted padding, no left padding if label is separate */
+    border: none;
+    border-bottom: 1px solid var(--input-border-color);
+    border-radius: 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    background-color: transparent; 
+    color: var(--dark-text-color);
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="tel"]::placeholder,
+.form-group input[type="number"]::placeholder,
+.form-group input[type="url"]::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa; /* Lighter placeholder text */
+    opacity: 1; /* Ensure it's visible */
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="url"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-bottom-color: var(--primary-color);
+    outline: none;
+    box-shadow: none; /* Removed box-shadow focus style */
+}
+
+.form-group textarea {
+    min-height: 80px; /* Adjusted from 120px */
+    resize: vertical;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23797864' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 16px 16px;
+    padding-right: 2rem; /* Make space for arrow */
+}
+
+/* Specific for file inputs, keep them more standard */
+.form-group input[type="file"] {
+    padding: 0.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg-color-hover);
+}
+.form-group input[type="file"]:focus {
+     border-color: var(--primary-color);
+     box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+
+/* Form Status Messages */
+.form-status-message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    display: none; /* Hidden by default */
+}
+.form-status-message.success {
+    background-color: var(--success-bg-color); 
+    color: var(--success-text-color); 
+    border: 1px solid var(--success-border-color); 
+    display: block;
+}
+.form-status-message.error {
+    background-color: var(--error-bg-color); 
+    color: var(--error-text-color); 
+    border: 1px solid var(--error-border-color); 
+    display: block;
+}
+
+
+
+/* Universal Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.215, 0.610, 0.355, 1);
+    will-change: opacity, transform; /* Performance hint for smoother animations */
+}
+
+/* Initial states for different fade-in directions - combine with .scroll-animate */
+.scroll-animate.fade-in-up { 
+    transform: translateY(40px); 
+}
+.scroll-animate.fade-in-down { 
+    transform: translateY(-40px); 
+}
+.scroll-animate.fade-in-left { 
+    transform: translateX(-40px); 
+}
+.scroll-animate.fade-in-right { 
+    transform: translateX(40px); 
+}
+
+/* Active state when element becomes visible (JS adds .visible class) */
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0); /* Reset transform for all directions */
+}
+
+/* Animation for data-view-item (from Superconscious theme) */
+[data-view-item="from-center"] {
+    transform: scale(0.7) translateY(20px);
+    opacity: 0;
+    transition: transform 1s cubic-bezier(.19,1,.22,1), opacity .5s;
+}
+
+.scroll-animate[data-view-item="from-center"].visible, /* Combine with existing scroll-animate logic */
+[data-view-item="from-center"].view /* From original template if used */ {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* 
+    Removed specific dark theme styling for .ai-features-section from here.
+    It will be handled in home.css for a light theme.
+*/
+
+/* Site Footer Styles */
+.site-footer {
+    background-color: var(--light-bg-color);
+    color: var(--dark-text-color);
+    padding: 50px 0 20px;
+    border-top: 1px solid var(--divider-color);
+    font-size: 0.9rem;
+}
+
+.footer-main-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Gap between left column and right columns block */
+}
+
+.footer-col-subscribe {
+    flex: 1;
+    min-width: 280px; /* Ensure it has enough space */
+    margin-bottom: 30px; /* Spacing for mobile when it stacks */
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-social-links {
+    margin-bottom: 25px;
+    display: flex; /* Added for alignment */
+    align-items: center; /* Vertically align icons */
+}
+
+.footer-social-links a {
+    color: var(--muted-text-color); /* Initial color for SVGs if not overridden by fill */
+    margin-right: 15px;
+    text-decoration: none;
+    display: inline-block; /* Ensure link takes space */
+    transition: color 0.3s ease, fill 0.3s ease; /* Transition fill for SVG */
+}
+
+.footer-social-links a svg {
+    width: 22px; /* Set a common size for icons */
+    height: 22px;
+    fill: var(--muted-text-color); /* Default color for SVG paths */
+    vertical-align: middle; /* Align icon nicely if there's any text remnants or for general flow */
+    transition: fill 0.3s ease;
+}
+
+.footer-social-links a:hover svg {
+    fill: var(--primary-color); /* Change SVG fill color on hover */
+}
+.footer-social-links a:hover {
+    color: var(--primary-color); /* Fallback or for other potential elements inside <a> */
+}
+
+.footer-social-links a:last-child {
+    margin-right: 0;
+}
+
+.footer-newsletter .newsletter-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--dark-text-color);
+    font-size: 1rem;
+}
+
+.footer-newsletter-form {
+    display: flex;
+    margin-bottom: 8px;
+    max-width: 350px; /* Limit width of newsletter form */
+}
+
+.footer-newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 0.9rem;
+    background-color: var(--card-bg-color); /* Match card bg for input */
+    color: var(--dark-text-color);
+    border-right: none; /* Button will form the right border */
+}
+
+.footer-newsletter-form input[type="email"]::placeholder {
+    color: var(--muted-text-color);
+    opacity: 0.8;
+}
+
+.footer-newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color), 0.2);
+}
+
+.footer-newsletter-form button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    font-size: 1rem; /* For icon character */
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter-form button:hover {
+    background-color: var(--primary-color-darker);
+}
+
+.footer-newsletter .newsletter-disclaimer {
+    font-size: 0.75rem;
+    color: var(--muted-text-color);
+    max-width: 350px; /* Align with form width */
+}
+
+.footer-newsletter .newsletter-disclaimer a {
+    color: var(--muted-text-color);
+    text-decoration: underline;
+}
+
+.footer-newsletter .newsletter-disclaimer a:hover {
+    color: var(--primary-color);
+}
+
+.footer-col-links-wrapper {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px; /* Gap between link columns */
+}
+
+.footer-links-column h5 {
+    color: var(--secondary-color);
+    margin-top: 0; /* Reset margin if wrapped under subscribe col on mobile */
+    margin-bottom: 18px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.footer-links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-column li {
+    margin-bottom: 12px;
+}
+
+.footer-links-column li:last-child {
+    margin-bottom: 0;
+}
+
+.footer-links-column a {
+    color: var(--dark-text-color);
+    text-decoration: none;
+    font-size: 0.875rem; /* Slightly smaller link text */
+    transition: color 0.3s ease;
+}
+
+.footer-links-column a:hover {
+    color: var(--dark-card-bg);
+    /* text-decoration: underline; */
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--divider-color);
+    font-size: 0.8rem;
+    color: var(--muted-text-color);
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 992px) { /* Tablet and below */
+    .footer-col-links-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for links */
+    }
+    .footer-col-subscribe {
+        min-width: 100%; /* Allow subscribe section to take full width if needed before link columns */
+        margin-bottom: 40px;
+    }
+     .footer-main-layout {
+        flex-direction: column; /* Stack subscribe and links columns */
+    }
+}
+
+@media (max-width: 576px) { /* Mobile */
+    .footer-col-links-wrapper {
+        grid-template-columns: 1fr; /* Single column for links */
+    }
+    .footer-links-column {
+        margin-bottom: 20px; /* Add space between stacked link columns */
+    }
+     .footer-links-column:last-child {
+        margin-bottom: 0;
+    }
+    .footer-newsletter-form {
+        max-width: none; /* Allow form to take full width */
+    }
+    .footer-newsletter .newsletter-disclaimer {
+        max-width: none;
+    }
+}

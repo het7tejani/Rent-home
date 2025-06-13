@@ -1,0 +1,332 @@
+/* House Detail Page Specific Styles */
+#house-detail-container {
+    padding-top: 2rem;
+}
+
+.house-title { 
+    font-size: 2.8rem; 
+    font-weight: 700;   
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.house-address {
+    font-size: 1.1rem;
+    color: var(--muted-text-color);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.house-price-main {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.main-content {
+    /* Styles for the left column housing images, description, features */
+}
+
+.sidebar {
+    /* Styles for the right column housing the inquiry form */
+}
+
+.property-details-section {
+    margin-bottom: 2rem;
+}
+
+.property-details-section .details-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: baseline;
+}
+
+.detail-label {
+    color: var(--muted-text-color);
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+.detail-value {
+    color: var(--dark-text-color);
+    font-weight: 500;
+    text-align: left;
+}
+
+
+/* Image Gallery Styles */
+.image-gallery {
+    margin-bottom: 2rem;
+}
+
+.main-image-container {
+    margin-bottom: 1rem;
+}
+
+#main-house-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent-color);
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.thumbnail-container img {
+    width: 100px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.thumbnail-container img:hover,
+.thumbnail-container img.active-thumb {
+    border-color: var(--primary-color);
+    opacity: 1;
+}
+
+
+/* Property Sections (Overview, Features, Video) */
+.property-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg-color-hover);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--accent-color);
+}
+
+.property-section h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.property-section p {
+    line-height: 1.7;
+    color: var(--dark-text-color);
+}
+
+.key-features {
+    list-style: none;
+    padding-left: 0;
+    columns: 2;
+    column-gap: 2rem;
+}
+
+.key-features li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    position: relative;
+    color: var(--dark-text-color);
+}
+
+.key-features li::before {
+    content: '✔';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Video Container and Video Element Styling */
+.video-container { 
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; 
+    border-radius: var(--border-radius);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.property-video video {
+    display: block; 
+    width: 100%;
+    max-height: 450px; 
+    border-radius: var(--border-radius);
+    background-color: #000; 
+    border: 1px solid var(--accent-color); 
+}
+
+
+/* Inquiry Form in Sidebar */
+.inquiry-form {
+    background-color: var(--card-bg-color); /* Kept for card appearance */
+    padding: 2rem; /* Increased padding */
+    position: sticky;
+    top: 100px; 
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.inquiry-form h3 {
+    margin-top: 0;
+    margin-bottom: 2rem; /* More space below title */
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* .form-group, label, input, textarea styles are now global from style.css */
+/* Specific adjustments if needed for inquiry form context */
+.inquiry-form .form-group label {
+    font-size: 0.8rem; /* Slightly smaller labels in sidebar form if desired */
+}
+
+.inquiry-form .form-group input,
+.inquiry-form .form-group textarea {
+    font-size: 0.95rem; /* Input text size */
+}
+
+.inquiry-form .btn-primary {
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 1rem; /* Space above button */
+}
+
+#inquiry-status.form-status-message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+#inquiry-status.form-status-message:not(:empty) {
+    display: block;
+}
+
+#inquiry-status:empty {
+    display: none;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--accent-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+
+/* Responsive Adjustments for House Detail Page */
+@media (max-width: 992px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .key-features {
+        columns: 1;
+    }
+    .inquiry-form {
+        position: static; 
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .house-title { 
+        font-size: 2.2rem; 
+    }
+
+    .house-price-main {
+        font-size: 1.5rem;
+    }
+
+    .property-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem 0;
+    }
+
+    .detail-item {
+        justify-content: flex-start;
+    }
+    .inquiry-form {
+        padding: 1.5rem; /* Less padding on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnail-container img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .property-details-section .details-title {
+        font-size: 1.5rem;
+    }
+
+    .detail-label,
+    .detail-value {
+        font-size: 0.9rem;
+    }
+}

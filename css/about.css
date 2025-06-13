@@ -1,0 +1,24 @@
+/* About Us Page Specifics */
+#about-content h2 {
+    /* Custom styles for "About Us" title if needed */
+}
+
+#about-content h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+#about-content ul {
+    list-style-position: inside;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+#about-content ul li {
+    margin-bottom: 8px;
+}
+
+#about-content ul li strong {
+    color: #2c3e50;
+}

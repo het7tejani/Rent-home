@@ -1,0 +1,67 @@
+.houses-listing h2 {
+    margin-bottom: 2rem;
+}
+
+.filter-controls {
+    background-color: var(--card-bg-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.filter-controls .form-group {
+    margin-bottom: 0; /* Handled by gap in flex container */
+    flex-grow: 1;
+}
+
+.filter-controls label { /* Already uses var(--secondary-color) via global .form-group label */
+    font-size: 0.9rem;
+}
+
+.filter-controls select {
+    /* Uses global .form-group select styling from style.css */
+    /* Specific overrides if needed: */
+    font-size: 0.95rem; /* Kept from original */
+    padding: 0.75rem; /* Harmonize padding with other inputs */
+}
+
+.filter-controls .btn {
+    padding: 0.75rem 1.2rem; /* Harmonize padding */
+    height: fit-content; 
+    line-height: normal; /* Remove previous line-height fix if padding handles alignment */
+}
+
+
+/* Property Grid is styled in style.css globally */
+/* Individual cards in style.css globally */
+
+/* Add a subtle animation for cards appearing */
+.property-card {
+    animation: popIn 0.5s ease-out forwards;
+    opacity: 0; /* Start hidden for animation */
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Stagger animation for cards */
+.property-grid .property-card:nth-child(1) { animation-delay: 0.1s; }
+.property-grid .property-card:nth-child(2) { animation-delay: 0.2s; }
+.property-grid .property-card:nth-child(3) { animation-delay: 0.3s; }
+.property-grid .property-card:nth-child(4) { animation-delay: 0.4s; }
+.property-grid .property-card:nth-child(5) { animation-delay: 0.5s; }
+.property-grid .property-card:nth-child(6) { animation-delay: 0.6s; }
+/* Add more if there are more static cards or handle with JS for dynamic ones */

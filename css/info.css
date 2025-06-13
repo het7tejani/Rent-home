@@ -1,0 +1,474 @@
+
+/* Key Benefits Section */
+.key-benefits-section {
+    background-color: var(--card-bg-color-hover); /* Light background */
+    padding: 60px 0; /* Match other content sections */
+}
+
+.key-benefits-section h2 { /* Targeting the section title */
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem; /* More space below title */
+    font-size: 2rem; /* Consistent with other section titles */
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+    max-width: 900px; /* Max width for the grid itself */
+    margin: 0 auto; /* Center the grid */
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start; /* Align icon with the top of the text */
+    gap: 1.5rem; /* Space between icon and text block */
+    padding: 1rem; /* Padding inside each item if needed, or rely on grid gap */
+}
+
+.benefit-icon {
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    margin-top: 0.25rem; /* Align icon slightly better with text */
+}
+
+.benefit-icon svg {
+    width: 36px; /* Icon size */
+    height: 36px;
+    fill: var(--primary-color); /* Icon color */
+}
+
+.benefit-text {
+    /* Container for title and description */
+}
+
+.benefit-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-text-color); /* Title color */
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-description {
+    font-size: 0.95rem;
+    color: var(--muted-text-color); /* Description color */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .key-benefits-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    .benefits-grid {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        gap: 1.5rem;
+    }
+    .benefit-item {
+        gap: 1rem;
+    }
+    .benefit-title {
+        font-size: 1.2rem;
+    }
+    .benefit-description {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* About Us Info Page Section */
+.about-us-info-page {
+    background-color: var(--about-us-bg-color, #FAF6F1); /* Fallback color */
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.about-us-info-page .container {
+    max-width: 1000px; /* Adjusted for a more focused layout */
+}
+
+.about-us-main-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem; /* Spacing between text and image column */
+    margin-bottom: 4rem; /* Space before stats */
+}
+
+.about-us-text-column {
+    flex: 1;
+    min-width: 300px; /* Ensure text column has enough space */
+}
+
+.about-us-text-column h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    text-align: left; /* Override general h2 center */
+}
+
+.about-us-text-column p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--dark-text-color);
+    margin-bottom: 2rem;
+}
+
+.btn-outline-accent {
+    border: 2px solid var(--accent-orange-red, #F47A5E);
+    color: var(--accent-orange-red, #F47A5E);
+    background-color: transparent;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+    border-radius: 30px; /* Pill shape */
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-accent:hover {
+    background-color: var(--accent-orange-red, #F47A5E);
+    color: var(--light-text-color);
+}
+
+.about-us-image-column {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-image-column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* Rounded corners for the image */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-us-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem; /* Gap for smaller screens when items wrap */
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--divider-color); /* Subtle separator from content above */
+    margin-top: 2rem;
+}
+
+.stat-item {
+    flex: 1; /* Allow items to grow and shrink */
+    min-width: 180px; /* Minimum width before wrapping */
+    text-align: center;
+    padding: 1rem 0.5rem;
+    position: relative;
+}
+
+.stat-number {
+    display: inline-block; /* Changed from block to allow sup next to it */
+    font-size: 2.5rem; /* Prominent number */
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+}
+
+.stat-item sup {
+    font-size: 1.6rem; /* Adjusted for proportion to stat-number */
+    font-weight: 700;
+    color: var(--secondary-color);
+    vertical-align: super; /* Standard superscript alignment */
+    margin-left: 1px;   /* Minimal space from number */
+    position: relative; /* Enable top adjustment */
+    top: -0.6em;      /* Lift it up a bit (em relative to sup's own font-size) */
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--muted-text-color);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.stat-divider {
+    width: 1px;
+    background-color: var(--divider-color);
+}
+
+/* Project Stats Showcase Section */
+.project-stats-showcase {
+    padding: 60px 0;
+    background-color: var(--light-bg-color); 
+}
+
+.project-stats-showcase .container {
+    max-width: 900px; 
+}
+
+.project-stats-card {
+    background-color: #FBF8F3; 
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+}
+
+.stat-showcase-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.stat-showcase-row:nth-of-type(3) { /* The last data row */
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+.stat-showcase-number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark-text-color);
+    flex-shrink: 0;
+    margin-right: 1.5rem; 
+    min-width: 180px; 
+    text-align: left;
+}
+
+.stat-showcase-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.stat-showcase-text h4 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--dark-text-color);
+    margin: 0 0 0.3rem 0;
+}
+
+.stat-showcase-text .accent-text {
+    color: var(--accent-orange-red, #F47A5E);
+    font-style: italic; 
+}
+
+.stat-showcase-text p {
+    font-size: 0.75rem;
+    color: var(--muted-text-color);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.stat-showcase-image {
+    flex-shrink: 0;
+    margin-left: 1.5rem; 
+    width: 90px; /* Define a consistent area for image containers */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-showcase-image img {
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Default to prevent unset values, will be overridden */
+    width: 60px; 
+    height: 60px;
+    border-radius: 12px; 
+}
+
+/* Specific image shapes */
+.stat-showcase-row:first-of-type .stat-showcase-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular */
+}
+
+.stat-showcase-row:nth-of-type(2) .stat-showcase-image img {
+    width: 80px; 
+    height: 80px;
+    border-radius: 35px 8px 8px 35px; /* D-shape (left side heavily rounded) */
+}
+
+.stat-showcase-row:nth-of-type(3) .stat-showcase-image img {
+    width: 100px; 
+    height: 75px;
+    border-radius: 40px; /* Oval Rectangle / Capsule */
+}
+
+
+
+/* Responsive Adjustments for Project Stats Showcase */
+@media (max-width: 768px) {
+    .project-stats-card {
+        padding: 1.5rem;
+    }
+    .stat-showcase-row {
+        flex-direction: column;
+        align-items: flex-start; 
+        text-align: left;
+        gap: 0.75rem; 
+        padding-bottom: 1.5rem; 
+    }
+    .stat-showcase-row:nth-of-type(3) { 
+         padding-bottom: 1rem; 
+    }
+
+    .stat-showcase-number {
+        font-size: 1.5rem;
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+    }
+    .stat-showcase-text h4 {
+        font-size: 1.2rem;
+    }
+    .stat-showcase-text p {
+        font-size: 0.8rem;
+    }
+    .stat-showcase-image {
+        margin-left: 0; 
+        margin-top: 0.5rem; 
+        align-self: flex-start; 
+        /* Keep container size consistent for alignment if needed */
+        width: 80px; /* Max width of images for consistency */
+        height: 50px; /* Max height of images for consistency */
+    }
+    
+    .stat-showcase-row:first-of-type .stat-showcase-image img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .stat-showcase-row:nth-of-type(2) .stat-showcase-image img {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px 6px 6px 25px; /* Scaled D-shape */
+    }
+    .stat-showcase-row:nth-of-type(3) .stat-showcase-image img {
+        width: 70px;
+        height: 44px; /* Maintain aspect ratio if possible */
+        border-radius: 22px; /* Scaled Capsule */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-stats-card {
+        border-radius: 16px;
+    }
+     .stat-showcase-number {
+        font-size: 1.3rem;
+    }
+    .stat-showcase-text h4 {
+        font-size: 1.1rem;
+    }
+
+    .stat-showcase-row:first-of-type .stat-showcase-image img {
+        width: 45px;
+        height: 45px;
+    }
+    .stat-showcase-row:nth-of-type(2) .stat-showcase-image img {
+        width: 45px;
+        height: 45px;
+        border-radius: 22.5px 5px 5px 22.5px; 
+    }
+    .stat-showcase-row:nth-of-type(3) .stat-showcase-image img {
+        width: 65px;
+        height: 40px; 
+        border-radius: 20px; 
+    }
+}
+
+
+/* Responsive Adjustments for About Us */
+@media (max-width: 992px) {
+    .about-us-text-column h2 {
+        font-size: 2.4rem;
+    }
+    .stat-number {
+        font-size: 2.2rem;
+    }
+    .stat-item sup {
+        font-size: 1.1rem; 
+        top: -0.55em;
+    }
+    .stat-divider {
+        display: none; 
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us-main-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center; 
+    }
+    .about-us-text-column h2 {
+        text-align: center; 
+        font-size: 2rem;
+    }
+    .about-us-text-column p {
+        font-size: 0.95rem;
+    }
+    .btn-outline-accent {
+        margin: 0 auto; 
+    }
+    .about-us-stats {
+        justify-content: center; 
+        flex-direction: column; /* Stack stat items directly */
+        align-items: center;
+        gap: 0; /* Remove gap, rely on item padding */
+        border-top: none; /* Remove top border if stacking */
+        margin-top: 1rem; /* Adjust margin */
+    }
+    .stat-item {
+        flex-basis: auto; /* Let it take natural width */
+        width: 100%; /* Full width for clarity when stacked */
+        margin-bottom: 0;
+        padding: 1rem 0.5rem;
+        border-top: 1px solid var(--divider-color);
+    }
+    .stat-item:first-child {
+        border-top: none; /* No border for the very first stacked item */
+    }
+     .about-us-stats .stat-item:last-child {
+        margin-bottom: 0; /* No bottom margin for the last one */
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+    .stat-item sup {
+        font-size: 1rem; 
+        top: -0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-item {
+        /* Already full width from above */
+    }
+    .about-us-text-column h2 {
+        font-size: 1.8rem;
+    }
+     .about-us-text-column p {
+        font-size: 0.9rem;
+    }
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    .stat-item sup {
+        font-size: 0.9rem; 
+        top: -0.45em;
+    }
+    .stat-label {
+        font-size: 0.85rem;
+    }
+}
